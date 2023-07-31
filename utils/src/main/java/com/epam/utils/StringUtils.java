@@ -5,6 +5,10 @@ public class StringUtils {
         if (str == null || str.isEmpty() || str.isBlank()) {
             return false;
         }
-        return Double.parseDouble(str) > 0;
+        try {
+            return Double.parseDouble(str) > 0;
+        } catch (NumberFormatException exception) {
+            return false;
+        }
     }
 }
